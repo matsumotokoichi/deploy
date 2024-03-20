@@ -53,7 +53,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=20)
     email = models.EmailField(unique=True) 
-    institution_name = models.CharField(max_length=50, null=True)
+    institution_name = models.CharField(max_length=50)
     institution_code = models.ForeignKey(InstitutionCode, on_delete=models.CASCADE)
     create_at = models.DateTimeField()
     update_at = models.DateTimeField()
